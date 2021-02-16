@@ -6,7 +6,7 @@
       :key="mercadoria['Código da Mercadoria']"
       :descricao="mercadoria.Mercadoria"
       :precoVenda="mercadoria['Preço de Venda']"
-      urlImagemMercadoria="joelho.jpg"
+      :urlImagemMercadoria="mercadoria.url"
     />
   </div>
 </template>
