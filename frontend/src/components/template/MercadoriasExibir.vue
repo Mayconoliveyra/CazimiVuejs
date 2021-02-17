@@ -17,7 +17,6 @@
             }}
           </span>
         </div>
-        <hr>
       </div>
   </router-link>
  
@@ -38,8 +37,9 @@ export default {
 <style>
 .mercadoriaConteiner {
   width: 215px;
-  height: 385px;
+  height: 350px;
   margin: 10px;
+  border-bottom: solid 1px #9c9e9e;
 }
 
 .mercadoriaConteiner:hover {
@@ -55,7 +55,7 @@ export default {
 }
 .imageMercaodira {
   width: 100%;
-  height: 65%;
+  height: 70%;
 }
 .mercadoriaConteiner .descricaoMercadoria {
   display: flex;
@@ -63,7 +63,7 @@ export default {
   font-size: 12px;
   font-weight: 700;
   padding: 2px 3px;
-  height: 13%;
+  height: 17%;
   overflow: hidden;
 }
 .mercadoriaConteiner .precoMercadoria {
