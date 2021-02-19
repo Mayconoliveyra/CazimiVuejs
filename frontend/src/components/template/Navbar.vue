@@ -3,19 +3,19 @@
       <router-link to="/maisVendidos" class="itemNav">
          Mais Vendidos
       </router-link>
-      <router-link to="/" class="itemNav">
+      <router-link to="/produtos_grupo_eletrica" class="itemNav">
          Elétrica
       </router-link>
-      <router-link to="/" class="itemNav">
+      <router-link to="/produtos_grupo_tubos" class="itemNav">
          Tubos
       </router-link>
-      <router-link to="/" class="itemNav">
+      <router-link to="/produtos_grupo_ferragens" class="itemNav">
          Ferragens
       </router-link>
-      <router-link to="/" class="itemNav">
+      <router-link to="/produtos_grupo_tintas" class="itemNav">
          Titas
       </router-link>
-      <router-link to="/" class="itemNav">
+      <router-link to="/produtos_grupo_reformas_construcao" class="itemNav">
          Reformas e Construção
       </router-link>
   </div>

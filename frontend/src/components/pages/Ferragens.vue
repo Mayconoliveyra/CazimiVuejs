@@ -1,18 +1,24 @@
 <template>
-  <div class="home">
-    <Carousel />
-
+  <div class="ferragens">
+    <MercadoriasExibir
+      v-for="mercadoria in mercadorias"
+      :idItem="mercadoria['Código da Mercadoria']"
+      :key="mercadoria['Código da Mercadoria']"
+      :descricao="mercadoria.Mercadoria"
+      :precoVenda="mercadoria['Preço de Venda']"
+      :urlImagemMercadoria="mercadoria.url"
+    />
   </div>
 </template>
 
 <script>
-import  Carousel from "./components/Carousel.vue"
+import MercadoriasExibir from "../template/MercadoriasExibir";
 import axios from "axios";
 import { baseApiUrl } from "../../../global";
 
 export default {
-  name: "home",
-  components: { Carousel },
+  name: "ferragens",
+  components: { MercadoriasExibir },
   data: function() {
     return {
       mercadorias: []
@@ -20,7 +26,7 @@ export default {
   },
   methods: {
     loadMercadorias() {
-      const url = `${baseApiUrl}/`;
+      const url = `${baseApiUrl}/produtos_grupo_ferragens`;
       axios.get(url).then(res => {
         this.mercadorias = res.data;
       });
@@ -33,7 +39,7 @@ export default {
 </script>
 
 <style>
-.home {
+.ferragens {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

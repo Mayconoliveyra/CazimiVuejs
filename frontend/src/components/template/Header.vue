@@ -5,11 +5,10 @@
         <img src="@/assets/logo.png" alt="Logo" />
       </router-link>
     </div>
-    <div class="input">
-      <b-input-group class="mt-3">
-        <b-form-input></b-form-input>
-      </b-input-group>
-    </div>
+    <form class="inputForm">
+        <input type="search" id="inputPesquisa" />
+        <img src="" alt="">
+    </form>
     <div class="utilitario">
       <div class="meuCarrinho">
         <i class="fa fa-shopping-bag fa-3x"></i>
@@ -23,7 +22,7 @@
 
 <script>
 export default {
-  name: "Header",
+  name: "Header"
 };
 </script>
 
@@ -50,10 +49,21 @@ export default {
 }
 /* #############  ############# */
 
-.input {
+.inputForm {
   width: 100%;
   padding: 0px 50px;
+  display: flex;
+  align-items: center;
 }
+
+#inputPesquisa {
+  height: 67%;
+  width: 100%;
+  border-radius: 7px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
 /* #############  ############# */
 
 .utilitario {
