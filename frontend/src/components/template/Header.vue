@@ -6,8 +6,11 @@
       </router-link>
     </div>
     <form class="inputForm">
-        <input type="search" id="inputPesquisa" />
-        <img src="" alt="">
+        <input type="search" id="inputPesquisa" list="mercadorias" />
+        <img src="@/assets/lupa.png" id="btnInputPesquisa" alt="logoLupa">
+        <datalist id="mercadorias">
+          <option v-for="mercadoria in mercadorias"  :key="mercadoria['Código da Mercadoria']" :value="mercadoria.Mercadoria"></option>
+        </datalist>
     </form>
     <div class="utilitario">
       <div class="meuCarrinho">
@@ -21,8 +24,26 @@
 </template>
 
 <script>
+import axios from "axios";
+import { baseApiUrl } from "../../../global";
 export default {
-  name: "Header"
+  name: "Header",
+  data: function() {
+    return {
+      mercadorias: []
+    };
+  },
+  methods: {
+    loadMercadorias() {
+      const url = `${baseApiUrl}/`;
+      axios.get(url).then(res => {
+        this.mercadorias = res.data;
+      });
+    }
+  },
+  mounted() {
+    this.loadMercadorias();
+  }
 };
 </script>
 
@@ -57,12 +78,28 @@ export default {
 }
 
 #inputPesquisa {
-  height: 67%;
+  height: 45px;
   width: 100%;
-  border-radius: 7px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   font-size: 20px;
   font-weight: 400;
+  background-color: rgb(250, 250, 249);
 }
+
+#btnInputPesquisa {
+  background-color: rgb(242, 180, 88);
+  height: 44px;
+  width: 55px;
+  padding: 7px 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+}
+
+/* #inputPesquisa:focus {
+  border: solid 8px rgb(191, 54, 13);
+} */
 
 /* #############  ############# */
 
