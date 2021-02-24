@@ -1,15 +1,15 @@
 <template>
-    <div class="carousel">
-        <h1>Carousel</h1>
+    <div>
+        <h3>Todos</h3>
     </div>
 </template>
 <script>
 export default {
-  name: "carousel"
-};
+    name: "todos"
+}
 </script>
 <style>
-</style>
 
+</style>
 
 

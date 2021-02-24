@@ -1,0 +1,28 @@
+<template>
+     <div>
+        <slot></slot>
+      </div>  
+</template>
+<script>
+export default {
+  name: "carousel",
+  data() {
+    return {
+      index: 0,
+      slides: []
+    }
+  },
+  mounted() {
+    this.slides = this.$children
+    this.slides.forEach((slide, i) => {
+      slide.index = i
+    });
+  }
+ 
+};
+</script>
+<style>
+</style>
+
+
+

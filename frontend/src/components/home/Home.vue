@@ -1,30 +1,47 @@
 <template>
   <div class="home">
-    <Secao title="Produtos que podem lhe interessar" :propsm="mercadorias"/>
-    
-   
+   <!--  <Secao title="Produtos que podem lhe interessar" :mercadorias="mercadorias"/> -->
+    <carousel>
+      <carousel-slide> Salut les gens </carousel-slide>
+      <carousel-slide> Aurevoir les gens </carousel-slide>
+    </carousel>
+    <todos v-model="todos"> </todos>>
   </div>
 </template>
 
 <script>
-/* import  Carousel from "./components/Carousel.vue" */
-import  Secao from "./components/Secao.vue"
+import CarouselSlide from "./components/carousel/CarouselSlide.vue";
+import Carousel from "./components/carousel/Carousel.vue";
+import Todos from "./components/Todos";
+
 import axios from "axios";
 import { baseApiUrl } from "../../../global";
 
 export default {
   name: "home",
-  components: { Secao },
+  components: { Carousel, Todos, CarouselSlide },
   data: function() {
     return {
-      mercadorias: []
+      mercadorias: [],
+      todos: [
+        {
+          name: "Demo",
+          completed: true
+        }
+      ]
     };
   },
   methods: {
     loadMercadorias() {
-      const url = `${baseApiUrl}/`;
+      const url = `${baseApiUrl}/produtos_grupo_eletrica`;
       axios.get(url).then(res => {
         this.mercadorias = res.data;
+      });
+    },
+    addTodo() {
+      this.todos.push({
+        name: "Jean",
+        completed: false
       });
     }
   },

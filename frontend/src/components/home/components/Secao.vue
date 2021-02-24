@@ -4,9 +4,9 @@
                 {{ title }}
         </div>
         <div class="mercadoriaSecao">
-          <div id="mercadoriasExibisSecao" v-for="mercadorias in propsm" :key="mercadorias['Código da Mercadoria']">
+          <div id="mercadoriasExibisSecao" v-for="mercadoria in mercadorias" :key="mercadoria['Código da Mercadoria']">
             <div id="imageMercaodiraSecao">
-              <img :src="mercadorias.url" alt="mercadoria" />
+              <img :src="mercadoria.url" alt="mercadoria" />
             </div>
           </div>
       </div>
@@ -19,7 +19,7 @@ export default {
     title: String,
     urlImagemMercadoria: String,
     idItem: Number,
-    propsm: {}
+    mercadorias: {}
   }
 };
 </script>
@@ -28,9 +28,13 @@ export default {
   display: flex;
   flex-direction: row;
   color: brown;
-  max-width: 100vw;
+  border: solid 1px red;
+  width: 100%;
+  flex-wrap: wrap;
 }
 #mercadoriasExibisSecao {
+  width: 200px;
+  height: 250px
 }
 
 #imageMercaodiraSecao {
@@ -46,8 +50,8 @@ export default {
 .secao {
   background: rgb(255, 251, 251);
   margin: 15px 0px;
-  width: 100%;
   height: 300px;
+  width: 100%;
 }
 .titleSecao {
   margin: 10px 20px;
