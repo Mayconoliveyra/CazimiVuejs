@@ -1,18 +1,20 @@
 <template>
   <div class="home">
-    <Carousel />
-
+    <Secao title="Produtos que podem lhe interessar" :propsm="mercadorias"/>
+    
+   
   </div>
 </template>
 
 <script>
-import  Carousel from "./components/Carousel.vue"
+/* import  Carousel from "./components/Carousel.vue" */
+import  Secao from "./components/Secao.vue"
 import axios from "axios";
 import { baseApiUrl } from "../../../global";
 
 export default {
   name: "home",
-  components: { Carousel },
+  components: { Secao },
   data: function() {
     return {
       mercadorias: []
