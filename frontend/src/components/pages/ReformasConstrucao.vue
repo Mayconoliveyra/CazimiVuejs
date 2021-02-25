@@ -44,6 +44,7 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0px 10%;
+  margin: 0px 11vw;
+  width: auto;
 }
 </style>

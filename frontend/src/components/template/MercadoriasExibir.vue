@@ -36,8 +36,10 @@ export default {
 
 <style>
 .mercadoriaConteiner {
-  width: 215px;
-  height: 350px;
+  width: 14.3vw;
+  height: 100%;
+  min-width: 265px;
+  min-height: 380px;
   margin: 15px;
   border-bottom: solid 1px #9c9e9e;
 }

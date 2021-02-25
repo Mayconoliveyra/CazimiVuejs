@@ -76,7 +76,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0px 7vw;
+  margin: 0px 12vw;
   width: auto;
 }
 .home img {
