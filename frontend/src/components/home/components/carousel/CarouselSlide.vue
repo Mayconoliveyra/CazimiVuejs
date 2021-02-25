@@ -20,7 +20,7 @@ export default {
 </script>
 <style>
 .carouselSlide {
-  height: 300px;
+  height: 330px;
   width: 100%;
 }
 

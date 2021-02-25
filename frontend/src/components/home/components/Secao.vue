@@ -27,8 +27,6 @@ export default {
 .mercadoriaSecao {
   display: flex;
   flex-direction: row;
-  color: brown;
-  border: solid 1px red;
   width: 100%;
   flex-wrap: wrap;
 }
@@ -49,7 +47,7 @@ export default {
 
 .secao {
   background: rgb(255, 251, 251);
-  margin: 15px 0px;
+  margin-top: 20px;
   height: 300px;
   width: 100%;
 }
@@ -57,7 +55,7 @@ export default {
   margin: 10px 20px;
   font-size: 23px;
   font-weight: 500;
-  color: rgb(87, 84, 84);
+  color: rgb(84, 81, 81);
 }
 </style>
 

@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-   <!--  <Secao title="Produtos que podem lhe interessar" :mercadorias="mercadorias"/> -->
     <carousel>
       <carousel-slide> 
         <a href="produtos_grupo_eletrica">
@@ -18,22 +17,28 @@
          </a>
       </carousel-slide>
     </carousel>
+      <Secao title="Produtos que podem lhe interessar" :mercadorias="mercadorias"/>
+      <Secao title="Produtos em alta" :mercadorias="mercadorias"/>
+      <Secao title="Produtos que podem lhe interessar" :mercadorias="mercadorias"/>
+      <Secao title="Produtos que podem lhe interessar" :mercadorias="mercadorias"/>
   </div>
 </template>
 
 <script>
 import CarouselSlide from "./components/carousel/CarouselSlide.vue";
 import Carousel from "./components/carousel/Carousel.vue";
+import Secao from "./components/Secao.vue";
 
 import axios from "axios";
 import { baseApiUrl } from "../../../global";
 
 export default {
   name: "home",
-  components: { Carousel, CarouselSlide },
+  components: { Carousel, CarouselSlide, Secao },
   data: function() {
     return {
       mercadorias: [],
+      mercadoriasMaisVendidos: [],
       todos: [
         {
           name: "Demo",
@@ -44,9 +49,13 @@ export default {
   },
   methods: {
     loadMercadorias() {
-      const url = `${baseApiUrl}/produtos_grupo_eletrica`;
-      axios.get(url).then(res => {
+      const urlEletrica = `${baseApiUrl}/produtos_grupo_eletrica`;
+      axios.get(urlEletrica).then(res => {
         this.mercadorias = res.data;
+      });
+      const urlMaisVendidos = `${baseApiUrl}/`;
+      axios.get(urlMaisVendidos).then(res => {
+        this.mercadoriasMaisVendidos = res.data;
       });
     },
     addTodo() {
