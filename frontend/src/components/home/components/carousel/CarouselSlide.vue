@@ -1,7 +1,6 @@
 <template>
     <div class="carouselSlide" v-show="visible">
-        Index: {{ index }}
-        <slot></slot>
+         <slot></slot>
     </div>
 </template>
 <script>
@@ -20,6 +19,11 @@ export default {
 };
 </script>
 <style>
+.carouselSlide {
+  height: 300px;
+  width: 100%;
+}
+
 </style>
 
 
