@@ -62,19 +62,19 @@ export default {
 .mercadoriaConteiner .descricaoMercadoria {
   display: flex;
   justify-content: center;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 17px;
+  font-weight: 500;
   padding: 2px 3px;
   height: 17%;
   overflow: hidden;
 }
 .mercadoriaConteiner .precoMercadoria {
   text-align: center;
-  font-size: 19px;
+  font-size: 20px;
 }
 .mercadoriaConteiner .precoMercadoria .spanMercadoriaDescricao {
-  font-weight: 500;
-  font-size: 24px;
+  font-weight: 400;
+  font-size: 27px;
 }
 
 .comprarAddCarrinho {

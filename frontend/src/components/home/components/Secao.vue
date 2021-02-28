@@ -4,23 +4,25 @@
                 {{ title }}
         </div>
         <div class="mercadoriaSecao">
-          <div id="mercadoriasExibisSecao" v-for="mercadoria in mercadorias" :key="mercadoria['Código da Mercadoria']">
-            <div id="imageMercaodiraSecao">
-              <img :src="mercadoria.url" alt="mercadoria" />
+            <div id="mercadoriasExibisSecao" v-for="mercadoria in mercadorias" :key="mercadoria['Código da Mercadoria']">
+              <a :href="mercadoria['Código da Mercadoria']" class="routerMercadoriasSecao">
+                  <div id="imageMercaodiraSecao">
+                    <img :src="mercadoria.url" alt="mercadoria" />
+                  </div>
+                  <div class="descricaoMercadoriaSecao">
+                    {{ mercadoria.Mercadoria }}
+                  </div>
+                  <div class="precoMercadoriaSecao">
+                    <sup>R$</sup><span class="spanMercadoriaDescricaoSecao">{{   
+                    mercadoria['Preço de Venda']
+                      .toFixed(2)
+                      .replace(".", ",")
+                      .replace(/(\d)(?=(\d{3})+\,)/g, "$1.")
+                      }}
+                    </span>
+                  </div>
+              </a>
             </div>
-            <div class="descricaoMercadoriaSecao">
-               {{ mercadoria.Mercadoria }}
-            </div>
-            <div class="precoMercadoriaSecao">
-               <sup>R$</sup><span class="spanMercadoriaDescricaoSecao">{{   
-              mercadoria['Preço de Venda']
-                .toFixed(2)
-                .replace(".", ",")
-                .replace(/(\d)(?=(\d{3})+\,)/g, "$1.")
-                 }}
-               </span>
-            </div>
-          </div>
       </div>
     </div>
 </template>
@@ -36,14 +38,28 @@ export default {
 };
 </script>
 <style>
+.routerMercadoriasSecao {
+  display: flex;
+  flex-direction: column;
+  color: #0f1111 !important;
+  align-content: center;
+  align-items: center;
+}
+
+.routerMercadoriasSecao:hover {
+  text-decoration: none;
+  text-decoration-color: none;
+}
+
 .descricaoMercadoriaSecao {
   display: flex;
   justify-content: center;
   font-size: 12px;
   font-weight: 700;
-  padding: 2px 3px;
+  padding: 2px 10px;
   height: 60px;
   overflow: hidden;
+  margin-top: 7px; 
 }
 
 .precoMercadoriaSecao {
@@ -89,8 +105,8 @@ export default {
 }
 
 .secao {
-  background: rgb(247, 247, 247);
-  height: 385px;
+  background: rgb(255, 255, 255);
+  height: 394px;
   width: 96%;
   margin: 22px;
   border-radius: 15px;
@@ -112,7 +128,7 @@ export default {
   border: 5px solid rgb(174, 173, 169);
 }
 .secao ::-webkit-scrollbar-track {
-  margin: 10px;
+  margin: 8px;
   background: rgb(227, 226, 223); /* color of the tracking area */
   border-radius: 50px;
 }
