@@ -27,35 +27,56 @@ export default {
 .mercadoriaSecao {
   display: flex;
   flex-direction: row;
-  width: 100%;
-  flex-wrap: wrap;
+  overflow-x: scroll;
 }
+
 #mercadoriasExibisSecao {
-  width: 200px;
-  height: 250px
+  width: 14.3vw;
+  height: 100%;
+  min-width: 265px;
+  margin: 0px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
 }
 
 #imageMercaodiraSecao {
-  width: 250px;
+  width: 206px;
   height: 200px;
 }
 
 #imageMercaodiraSecao img {
-  width: 100%;
+  width:  100%;
   height: 100%;
 }
 
 .secao {
   background: rgb(255, 251, 251);
-  margin-top: 20px;
-  height: 300px;
-  width: 100%;
+  height: 290px;
+  width: 96%;
+  margin: 22px;
 }
+
 .titleSecao {
   margin: 10px 20px;
   font-size: 23px;
   font-weight: 500;
   color: rgb(84, 81, 81);
+}
+
+.secao ::-webkit-scrollbar {
+    height: 23px;
+}
+.secao ::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background: rgb(255, 213, 0); 
+    border: 5px solid rgb(174, 173, 169);  
+}
+.secao ::-webkit-scrollbar-track {
+  margin: 5px; 
+  background: rgb(208, 207, 204);        /* color of the tracking area */
+  border-radius: 50px;
 }
 </style>
 

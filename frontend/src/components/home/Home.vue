@@ -1,26 +1,27 @@
 <template>
   <div class="home">
-    <carousel>
-      <carousel-slide> 
+    <Carousel>
+      <CarouselSlide> 
         <a href="produtos_grupo_eletrica">
           <img src="https://bravoenergy.com.br/fotos/banner_1.jpg">
         </a>
-      </carousel-slide>
-      <carousel-slide> 
+      </CarouselSlide>
+      <CarouselSlide> 
         <a href="produtos_grupo_reformas_construcao">
         <img src="https://banco.bradesco/assets/classic/img/produtos-servicos/imoveis/produtos/banner-cdc-material-de-construcao.jpg">
          </a>
-      </carousel-slide>
-      <carousel-slide> 
+      </CarouselSlide>
+      <CarouselSlide> 
         <a href="produtos_grupo_tintas">
         <img src="https://www.taqi.com.br/file/general/banner-taqi-categoria-tintas-e-acessorios-desk-111220.jpg">
          </a>
-      </carousel-slide>
-    </carousel>
+      </CarouselSlide>
+    </Carousel>
+
       <Secao title="Produtos que podem lhe interessar" :mercadorias="mercadorias"/>
-      <Secao title="Produtos em alta" :mercadorias="mercadorias"/>
-      <Secao title="Produtos que podem lhe interessar" :mercadorias="mercadorias"/>
-      <Secao title="Produtos que podem lhe interessar" :mercadorias="mercadorias"/>
+      <Secao title="Produtos mais vendidos" :mercadorias="mercadorias"/>
+      <Secao title="Material para construção ou reforma" :mercadorias="mercadorias"/>
+      <Secao title="Farragem e armações" :mercadorias="mercadorias"/>
   </div>
 </template>
 
@@ -49,7 +50,7 @@ export default {
   },
   methods: {
     loadMercadorias() {
-      const urlEletrica = `${baseApiUrl}/produtos_grupo_eletrica`;
+      const urlEletrica = `${baseApiUrl}/`;
       axios.get(urlEletrica).then(res => {
         this.mercadorias = res.data;
       });
@@ -76,11 +77,12 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0px 12vw;
-  width: auto;
+  align-items: center;
+  margin: 0px auto;
+  width: 1400px;
 }
 .home img {
-  width: 100%;
+  width: 1400px;
   height: 100%;
 }
 </style>
