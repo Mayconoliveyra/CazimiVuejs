@@ -8,6 +8,18 @@
             <div id="imageMercaodiraSecao">
               <img :src="mercadoria.url" alt="mercadoria" />
             </div>
+            <div class="descricaoMercadoriaSecao">
+               {{ mercadoria.Mercadoria }}
+            </div>
+            <div class="precoMercadoriaSecao">
+               <sup>R$</sup><span class="spanMercadoriaDescricaoSecao">{{   
+              mercadoria['Preço de Venda']
+                .toFixed(2)
+                .replace(".", ",")
+                .replace(/(\d)(?=(\d{3})+\,)/g, "$1.")
+                 }}
+               </span>
+            </div>
           </div>
       </div>
     </div>
@@ -24,6 +36,30 @@ export default {
 };
 </script>
 <style>
+.descricaoMercadoriaSecao {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 3px;
+  height: 60px;
+  overflow: hidden;
+}
+
+.precoMercadoriaSecao {
+  font-weight: 400;
+  text-align: center;
+  font-size: 22px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.spanMercadoriaDescricaoSecao {
+  font-weight: 500;
+  font-size: 24px;
+}
+
 .mercadoriaSecao {
   display: flex;
   flex-direction: row;
@@ -33,11 +69,12 @@ export default {
 #mercadoriasExibisSecao {
   width: 14.3vw;
   height: 100%;
-  min-width: 265px;
-  margin: 0px 5px;
+  min-width: 214px;
+  margin: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   margin-bottom: 8px;
 }
 
@@ -47,15 +84,16 @@ export default {
 }
 
 #imageMercaodiraSecao img {
-  width:  100%;
+  width: 100%;
   height: 100%;
 }
 
 .secao {
-  background: rgb(255, 251, 251);
-  height: 290px;
+  background: rgb(247, 247, 247);
+  height: 385px;
   width: 96%;
   margin: 22px;
+  border-radius: 15px;
 }
 
 .titleSecao {
@@ -66,16 +104,16 @@ export default {
 }
 
 .secao ::-webkit-scrollbar {
-    height: 23px;
+  height: 23px;
 }
 .secao ::-webkit-scrollbar-thumb {
-    border-radius: 50px;
-    background: rgb(255, 213, 0); 
-    border: 5px solid rgb(174, 173, 169);  
+  border-radius: 50px;
+  background: rgb(255, 213, 0);
+  border: 5px solid rgb(174, 173, 169);
 }
 .secao ::-webkit-scrollbar-track {
-  margin: 5px; 
-  background: rgb(208, 207, 204);        /* color of the tracking area */
+  margin: 10px;
+  background: rgb(227, 226, 223); /* color of the tracking area */
   border-radius: 50px;
 }
 </style>
