@@ -29,12 +29,13 @@ export default {
   font-family: inherit, "Lato", sans-serif;
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
-
 #app {
   min-height: 100vh;
+  width: 100%;
   display: grid;
-  grid-template-rows: 70px 35px 1fr 80px;
+  grid-template-rows: 103px 35px 1fr 80px;
   grid-template-columns: 1fr;
   grid-template-areas:
     "header"

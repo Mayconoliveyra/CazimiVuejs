@@ -3,6 +3,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import "./config/bootstrap"
 import "./config/msgs"
+import './config/mq'
 
 import router from "./config/router"
 

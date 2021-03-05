@@ -1,5 +1,5 @@
 <template>
-  <div class="navbarr">
+  <div class="navbarr" v-if="this.$mq !== 'xs'">
       <router-link to="/maisVendidos" class="itemNav">
          Mais Vendidos
       </router-link>
@@ -17,6 +17,17 @@
       </router-link>
       <router-link to="/produtos_grupo_reformas_construcao" class="itemNav">
          Reformas e Construção
+      </router-link>
+  </div>
+  <div class="navbarr" v-else>
+      <router-link to="/maisVendidos" class="itemNav">
+         Mais Vendidos
+      </router-link>
+      <router-link to="/produtos_grupo_eletrica" class="itemNav">
+         Elétrica
+      </router-link>
+      <router-link to="/produtos_grupo_tubos" class="itemNav">
+         Tubos
       </router-link>
   </div>
 </template>
