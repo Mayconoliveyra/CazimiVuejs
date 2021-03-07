@@ -49,14 +49,14 @@ export default {
 .carousel__nav {
   position: absolute;
   top: 6%;
-  left: 10px;
+  left: 30px;
   height: 91%;
   background: transparent;
   width: 60px;
 }
 
 .carousel__nav.carousel__next {
-  right: 10px;
+  right: 30px;
   left: auto;
 }
 .carousel button {

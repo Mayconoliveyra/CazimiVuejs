@@ -28,6 +28,9 @@
   <div class="header" v-else>
     <div id="header_xs">
       <div class="" id="logo_utiliti">
+        <a href="/" id="toggle">
+          <i class="fa fa-bars fa-2x"></i>
+        </a>
         <div id="logo_xs">
           <router-link to="/">
             <img src="@/assets/logo.png" alt="Logo" />
@@ -89,48 +92,58 @@ export default {
 
 <style>
 /* ####################################  HEADER XS ##################################### */
+#toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 100%;
+  color: black;
+}
 #inputPesquisa_xs {
-  height: 35px;
+  height: 33px;
   width: 100%;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   font-size: 20px;
   font-weight: 400;
   background-color: rgb(250, 250, 249);
+  border: none;
 }
 #btnInputPesquisa_xs {
   background-color: rgb(242, 180, 88);
-  height: 34.9px;
-  width: 55px;
-  padding: 3px 10px;
+  height: 33.9px;
+  width: 70px;
+  padding: 4px 18px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   cursor: pointer;
 }
 #inputPesq_xs {
-  padding-top: 8px;
+  padding-top: 7px;
 }
 #logo_utiliti {
   width: 100%;
-  height: 50px;
+  height: 43px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 #header_xs {
   width: 100%;
-  height: 50px;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 #logo_xs {
-  width: 170px;
   display: flex;
+  flex-grow: 1;
+  height: 100%;
 }
 #logo_xs img {
-  width: 100%;
+  width: 170px;
   height: 100%;
-  padding: 8px;
+  padding: 7px 3px;
 }
 #utilitario_xs {
   display: flex;
@@ -158,7 +171,6 @@ export default {
   border-left: solid 2px rgb(125, 124, 124);
   border-radius: 15px;
 }
-
 
 /* ####################################  HEADER ##################################### */
 .header {

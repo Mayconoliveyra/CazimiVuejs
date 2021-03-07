@@ -1,6 +1,6 @@
 <template>
-    <div class="carouselSlide" v-show="visible">
-         <slot></slot>
+    <div class="container-fluid carouselSlide" v-show="visible">
+         <slot id="imgSlid"></slot>
     </div>
 </template>
 <script>
@@ -20,8 +20,8 @@ export default {
 </script>
 <style>
 .carouselSlide {
-  height: 330px;
-  width: 100%;
+  height: 300px;
+  max-width: 1300px;
 }
 
 </style>

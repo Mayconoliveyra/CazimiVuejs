@@ -1,5 +1,5 @@
 <template>
-    <div class="secao">
+    <div class="container secao" >
         <div class="titleSecao">
                 {{ title }}
         </div>
@@ -57,7 +57,7 @@ export default {
   font-size: 12px;
   font-weight: 700;
   padding: 2px 10px;
-  height: 60px;
+  height: 55px;
   overflow: hidden;
   margin-top: 7px; 
 }
@@ -107,8 +107,7 @@ export default {
 .secao {
   background: rgb(255, 255, 255);
   height: 394px;
-  width: 96%;
-  margin: 22px;
+  margin: 15px;
   border-radius: 15px;
 }
 

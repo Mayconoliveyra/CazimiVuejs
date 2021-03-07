@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Carousel>
+    <Carousel class="container-fluid" id="Carousel">
       <CarouselSlide> 
         <a href="produtos_grupo_eletrica">
           <img src="https://bravoenergy.com.br/fotos/banner_1.jpg">
@@ -73,16 +73,18 @@ export default {
 </script>
 
 <style>
+#Carousel {
+max-width: 1300px;
+}
 .home {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0px auto;
-  width: 1400px;
+  width: 100%;
 }
 .home img {
-  width: 1400px;
+  width: 100%;
   height: 100%;
 }
 </style>
