@@ -1,34 +1,41 @@
 <template>
-  <router-link
-    to="/maisVendidos"
-    id="routerMercadorias_xs"
-    v-if="this.$mq !== 'xs'"
-  >
+  <router-link to="/maisVendidos" class="routerMercadorias" v-if="this.$mq !== 'xs'">
     <div class="mercadoriaConteiner">
       <div class="imageMercaodira">
         <!-- <img :src="require(`@/assets/${urlImagemMercadoria}`)" alt="mercadoria" /> -->
         <img :src="urlImagemMercadoria" alt="mercadoria" />
       </div>
-      <div class="descricaoMercadoria">
-        {{ descricao }}
-      </div>
+      <div class="descricaoMercadoria">{{ descricao }}</div>
       <div class="precoMercadoria">
-        <sup>R$</sup
-        ><span class="spanMercadoriaDescricao"
-          >{{
-            precoVenda
-              .toFixed(2)
-              .replace(".", ",")
-              .replace(/(\d)(?=(\d{3})+\,)/g, "$1.")
+        <sup>R$</sup>
+        <span class="spanMercadoriaDescricao">
+          {{
+          precoVenda
+          .toFixed(2)
+          .replace(".", ",")
+          .replace(/(\d)(?=(\d{3})+\,)/g, "$1.")
           }}
         </span>
       </div>
     </div>
   </router-link>
-  <router-link to="/maisVendidos" class="routerMercadorias" v-else>
+  <router-link to="/maisVendidos" id="routerMercadorias_xs" v-else>
     <div id="mercadoriaContainer_xs">
       <div id="img_mercadoria_xs">
         <img :src="urlImagemMercadoria" alt="mercadoria" />
+      </div>
+      <div id="container_descricao_preco_btn_xs">
+        <div id="descricao_xs">{{ descricao }}</div>
+        <div id="preco_xs">
+          <sup>R$</sup>
+          <span id="spanMercadoriaPreco_xs">{{
+            precoVenda
+            .toFixed(2)
+            .replace(".", ",")
+            .replace(/(\d)(?=(\d{3})+\,)/g, "$1.")
+            }}
+          </span>
+        </div>
       </div>
     </div>
   </router-link>
@@ -47,17 +54,42 @@ export default {
 </script>
 
 <style>
-#routerMercadorias_xs {
-
+#spanMercadoriaPreco_xs {
+  font-weight: 400;
+  font-size: 27px;
 }
+#preco_xs {
+  text-align: center;
+  font-size: 20px;
+  color: #000;
+}
+#descricao_xs {
+  padding: 10px;
+  color: #0f1111;
+  overflow: hidden;
+}
+#container_descricao_preco_btn_xs {
+  width: 60%;
+  height: 100%;
+}
+#routerMercadorias_xs {
+  width: 100%;
+  height: 180px;
+  background-color: #e2e6e6;
+  margin: 5px;
+  border-radius: 10px;
+  border: solid 1px rgb(148, 148, 148);
+}
+
 #mercadoriaContainer_xs {
   display: flex;
   width: 100%;
+  height: 100%;
 }
 #img_mercadoria_xs {
-  width: 130px;
-  height: 100px;
-  padding: 7px;
+  width: 40%;
+  height: 100%;
+  padding: 5px;
 }
 #img_mercadoria_xs img {
   width: 100%;

@@ -1,5 +1,5 @@
 <template>
-  <div class="tintas">
+  <div class="container-fluid tintas">
     <MercadoriasExibir
       v-for="mercadoria in mercadorias"
       :idItem="mercadoria['Código da Mercadoria']"
@@ -44,7 +44,5 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0px 11vw;
-  width: auto;
 }
 </style>

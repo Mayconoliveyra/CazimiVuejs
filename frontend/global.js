@@ -1,6 +1,6 @@
 import Vue from "vue"
 
-export const baseApiUrl = "http://192.168.1.5:3030"
+export const baseApiUrl = "http://192.168.1.14:3030"
 
 export function showError(e) {
     if (e && e.response && e.response.data) {

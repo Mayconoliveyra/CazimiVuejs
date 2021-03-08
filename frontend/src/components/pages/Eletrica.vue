@@ -1,5 +1,5 @@
 <template>
-  <div class="eletrica">
+  <div class="container-fluid eletrica">
     <MercadoriasExibir
       v-for="mercadoria in mercadorias"
       :idItem="mercadoria['Código da Mercadoria']"
@@ -44,7 +44,5 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0px 11vw;
-  width: auto;
 }
 </style>
