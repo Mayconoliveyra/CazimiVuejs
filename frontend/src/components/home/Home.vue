@@ -1,27 +1,60 @@
 <template>
-  <div class="home">
+  <div class="home" v-if="this.$mq !== 'xs'">
     <Carousel class="container-fluid" id="Carousel">
-      <CarouselSlide> 
+      <CarouselSlide>
         <a href="produtos_grupo_eletrica">
-          <img src="https://bravoenergy.com.br/fotos/banner_1.jpg">
+          <img src="https://bravoenergy.com.br/fotos/banner_1.jpg" />
         </a>
       </CarouselSlide>
-      <CarouselSlide> 
+      <CarouselSlide>
         <a href="produtos_grupo_reformas_construcao">
-        <img src="https://banco.bradesco/assets/classic/img/produtos-servicos/imoveis/produtos/banner-cdc-material-de-construcao.jpg">
-         </a>
+          <img
+            src="https://banco.bradesco/assets/classic/img/produtos-servicos/imoveis/produtos/banner-cdc-material-de-construcao.jpg"
+          />
+        </a>
       </CarouselSlide>
-      <CarouselSlide> 
+      <CarouselSlide>
         <a href="produtos_grupo_tintas">
-        <img src="https://www.taqi.com.br/file/general/banner-taqi-categoria-tintas-e-acessorios-desk-111220.jpg">
-         </a>
+          <img
+            src="https://www.taqi.com.br/file/general/banner-taqi-categoria-tintas-e-acessorios-desk-111220.jpg"
+          />
+        </a>
       </CarouselSlide>
     </Carousel>
 
-      <Secao title="Produtos que podem lhe interessar" :mercadorias="mercadorias"/>
-      <Secao title="Produtos mais vendidos" :mercadorias="mercadorias"/>
-      <Secao title="Material para construção ou reforma" :mercadorias="mercadorias"/>
-      <Secao title="Farragem e armações" :mercadorias="mercadorias"/>
+    <Secao
+      title="Produtos que podem lhe interessar"
+      :mercadorias="mercadorias"
+    />
+    <Secao title="Produtos mais vendidos" :mercadorias="mercadorias" />
+    <Secao
+      title="Material para construção ou reforma"
+      :mercadorias="mercadorias"
+    />
+    <Secao title="Farragem e armações" :mercadorias="mercadorias" />
+  </div>
+  <div class="home" v-else>
+    <CarouselXS id="Carousel_xs">
+      <CarouselSlideXS>
+        <a href="produtos_grupo_eletrica">
+          <img src="https://bravoenergy.com.br/fotos/banner_1.jpg" />
+        </a>
+      </CarouselSlideXS>
+      <CarouselSlideXS>
+        <a href="produtos_grupo_reformas_construcao">
+          <img
+            src="https://banco.bradesco/assets/classic/img/produtos-servicos/imoveis/produtos/banner-cdc-material-de-construcao.jpg"
+          />
+        </a>
+      </CarouselSlideXS>
+      <CarouselSlideXS>
+        <a href="produtos_grupo_tintas">
+          <img
+            src="https://www.taqi.com.br/file/general/banner-taqi-categoria-tintas-e-acessorios-desk-111220.jpg"
+          />
+        </a>
+      </CarouselSlideXS>
+    </CarouselXS>
   </div>
 </template>
 
@@ -30,51 +63,59 @@ import CarouselSlide from "./components/carousel/CarouselSlide.vue";
 import Carousel from "./components/carousel/Carousel.vue";
 import Secao from "./components/Secao.vue";
 
+import CarouselSlideXS from "./components/carouselXS/CarouselSlideXS.vue";
+import CarouselXS from "./components/carouselXS/CarouselXS.vue";
+/* import SecaoXS from "./components/SecaoXS.vue"; */
+
 import axios from "axios";
 import { baseApiUrl } from "../../../global";
 
 export default {
   name: "home",
-  components: { Carousel, CarouselSlide, Secao },
-  data: function() {
+  components: { Carousel, CarouselSlide, Secao, CarouselXS, CarouselSlideXS },
+  data: function () {
     return {
       mercadorias: [],
       mercadoriasMaisVendidos: [],
       todos: [
         {
           name: "Demo",
-          completed: true
-        }
-      ]
+          completed: true,
+        },
+      ],
     };
   },
   methods: {
     loadMercadorias() {
       const urlEletrica = `${baseApiUrl}/`;
-      axios.get(urlEletrica).then(res => {
+      axios.get(urlEletrica).then((res) => {
         this.mercadorias = res.data;
       });
       const urlMaisVendidos = `${baseApiUrl}/`;
-      axios.get(urlMaisVendidos).then(res => {
+      axios.get(urlMaisVendidos).then((res) => {
         this.mercadoriasMaisVendidos = res.data;
       });
     },
     addTodo() {
       this.todos.push({
         name: "Jean",
-        completed: false
+        completed: false,
       });
-    }
+    },
   },
   mounted() {
     this.loadMercadorias();
-  }
+  },
 };
 </script>
 
 <style>
+#Carousel_xs {
+  width: 100%;
+}
+
 #Carousel {
-max-width: 1300px;
+  max-width: 1300px;
 }
 .home {
   display: flex;

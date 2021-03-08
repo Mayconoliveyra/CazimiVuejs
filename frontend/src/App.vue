@@ -33,7 +33,7 @@ export default {
 }
 #app {
   min-height: 100vh;
-  width:  100%;
+  width: 100vw;
   display: grid;
   grid-template-rows: 88px 35px 1fr 80px;
   grid-template-columns: 1fr;

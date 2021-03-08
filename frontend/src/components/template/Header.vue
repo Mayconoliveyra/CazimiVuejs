@@ -124,7 +124,7 @@ export default {
 }
 #logo_utiliti {
   width: 100%;
-  height: 43px;
+  height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -141,7 +141,7 @@ export default {
   height: 100%;
 }
 #logo_xs img {
-  width: 170px;
+  width: 150px;
   height: 100%;
   padding: 7px 3px;
 }

@@ -1,25 +1,37 @@
 <template>
-  <router-link to="/maisVendidos" class="routerMercadorias">
+  <router-link
+    to="/maisVendidos"
+    id="routerMercadorias_xs"
+    v-if="this.$mq !== 'xs'"
+  >
     <div class="mercadoriaConteiner">
-        <div class="imageMercaodira">
-          <!-- <img :src="require(`@/assets/${urlImagemMercadoria}`)" alt="mercadoria" /> -->
-          <img :src="urlImagemMercadoria" alt="mercadoria" />
-        </div>
-        <div class="descricaoMercadoria">
-          {{ descricao }}
-        </div>
-        <div class="precoMercadoria">
-          <sup>R$</sup><span class="spanMercadoriaDescricao">{{   
-              precoVenda
-                .toFixed(2)
-                .replace(".", ",")
-                .replace(/(\d)(?=(\d{3})+\,)/g, "$1.")
-            }}
-          </span>
-        </div>
+      <div class="imageMercaodira">
+        <!-- <img :src="require(`@/assets/${urlImagemMercadoria}`)" alt="mercadoria" /> -->
+        <img :src="urlImagemMercadoria" alt="mercadoria" />
       </div>
+      <div class="descricaoMercadoria">
+        {{ descricao }}
+      </div>
+      <div class="precoMercadoria">
+        <sup>R$</sup
+        ><span class="spanMercadoriaDescricao"
+          >{{
+            precoVenda
+              .toFixed(2)
+              .replace(".", ",")
+              .replace(/(\d)(?=(\d{3})+\,)/g, "$1.")
+          }}
+        </span>
+      </div>
+    </div>
   </router-link>
- 
+  <router-link to="/maisVendidos" class="routerMercadorias" v-else>
+    <div id="mercadoriaContainer_xs">
+      <div id="img_mercadoria_xs">
+        <img :src="urlImagemMercadoria" alt="mercadoria" />
+      </div>
+    </div>
+  </router-link>
 </template>
 
 <script>
@@ -29,12 +41,29 @@ export default {
     descricao: String,
     precoVenda: Number,
     urlImagemMercadoria: String,
-    idItem: Number
-  }
+    idItem: Number,
+  },
 };
 </script>
 
 <style>
+#routerMercadorias_xs {
+
+}
+#mercadoriaContainer_xs {
+  display: flex;
+  width: 100%;
+}
+#img_mercadoria_xs {
+  width: 130px;
+  height: 100px;
+  padding: 7px;
+}
+#img_mercadoria_xs img {
+  width: 100%;
+  height: 100%;
+}
+/* ##################### EXIBIR LG ################# */
 .mercadoriaConteiner {
   width: 14.3vw;
   height: 100%;
