@@ -54,19 +54,25 @@ export default {
 </script>
 
 <style>
+#routerMercadorias_xs:hover{
+  text-decoration: none;
+}
 #spanMercadoriaPreco_xs {
   font-weight: 400;
-  font-size: 27px;
+  font-size: 24px;
 }
 #preco_xs {
-  text-align: center;
-  font-size: 20px;
+  padding-left: 10px;
+  font-size: 18px;
   color: #000;
 }
 #descricao_xs {
   padding: 10px;
   color: #0f1111;
   overflow: hidden;
+  max-height: 63%;
+  font-size: 13px;
+  font-weight: 500;
 }
 #container_descricao_preco_btn_xs {
   width: 60%;
@@ -75,10 +81,10 @@ export default {
 #routerMercadorias_xs {
   width: 100%;
   height: 180px;
-  background-color: #e2e6e6;
+  background-color: #f2f7f7;
   margin: 5px;
   border-radius: 10px;
-  border: solid 1px rgb(148, 148, 148);
+  border: solid 1px rgb(186, 183, 183);
 }
 
 #mercadoriaContainer_xs {
